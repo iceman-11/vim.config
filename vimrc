@@ -120,13 +120,12 @@ endif
 
 set number
 set relativenumber
-Nmap <silent> <Leader>n  [Toggle line numbers]     :set number!<CR>
-Nmap <silent> <Leader>rn [Toggle relative numbers] :set relativenumber!<CR>
+Nmap <silent> <Leader>tn [Toggle relative numbers] :set relativenumber!<CR>
 
 "===[ Scrolling & diff ]========================================================
 
-Nmap <silent> <Leader>sb [Turn scroll binding on]  :windo set scb<CR>
-Nmap <silent> <Leader>sB [Turn scroll binding off] :windo set noscb<CR>
+"Nmap <silent> <Leader>sb [Turn scroll binding on]  :windo set scb<CR>
+"Nmap <silent> <Leader>sB [Turn scroll binding off] :windo set noscb<CR>
 
 Nmap <silent> <Leader>dt [Diff windows] :windo diffthis<CR>
 Nmap <silent> <Leader>do [Diff cancel]  :diffoff<CR>
@@ -286,7 +285,7 @@ Nmap <silent> <Leader>TE [Toggle expandtab]
 
 set spelllang=en_gb
 
-Nmap <silent> <Leader>s [Toggle spell-checking]
+Nmap <silent> <Leader>ts [Toggle spell-checking]
 	\ :set invspell spelllang=en_gb<CR>
 
 "===[ Auto-update this config file ]============================================
@@ -445,12 +444,6 @@ command! -range RmDash <line1>,<line2>s/[–—]/-/ge
 "===[ FZF ]===============================================================
 
 set runtimepath+=~/.fzf
-
-runtime plugin/fzf.vim
-
-if exists('g:loaded_fzf')
-	Nmap <Leader>f [Run FZF] :FZF<CR>
-endif
 
 "===[ Shortcuts ]===============================================================
 
