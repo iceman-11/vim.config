@@ -456,6 +456,9 @@ vmap <Del> "_d
 Nmap <Del> [Delete] "_d
 Nmap <Del><Del> [Delete line] "_dd
 
+" Paste w/o register backup
+vmap <Leader>p "_dP
+
 " Toggle read-only
 Nmap <Leader>ro [Toggle Read-Only] :set ro!<CR>
 
