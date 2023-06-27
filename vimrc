@@ -12,7 +12,11 @@ filetype plugin indent on
 "===[ Leader key ]==============================================================
 
 let mapleader="\<Space>"
-let maplocalleader="\\"
+let maplocalleader="\<Space>"
+
+" Disable default mapping for <Space>
+nmap <silent> <Space> <Nop>
+vmap <silent> <Space> <Nop>
 
 "===[ Options ]=================================================================
 
@@ -295,8 +299,8 @@ augroup VimReload
 	autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
-Nmap <silent> <Leader>v  [Edit .vimrc]          :next $MYVIMRC<CR>
-Nmap <silent> <Leader>vv [Edit .vim/plugin/...] :next ~/.vim/plugin<CR>
+Nmap <silent> <Leader>ce  [Configuration Edit]     :next $MYVIMRC<CR>
+Nmap <silent> <Leader>bd  [Go to Buffer Directory] :cd %:h<CR>:pwd<CR>
 
 "===[ Remove auto comment ]=====================================================
 
