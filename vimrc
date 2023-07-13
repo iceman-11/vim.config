@@ -25,7 +25,6 @@ set nojoinspaces        " Disable double-spaces after '.', '?' and '!'
 
 set history=200         " Remember last 200 commands
 set scrolloff=5         " Scroll when 5 lines from top/bottom
-set modelines=0         " Disable modelines
 
 set splitright          " Split vertically to the right
 set splitbelow          " Split horizontally below
@@ -455,6 +454,9 @@ set runtimepath+=~/.fzf
 vmap <Del> "_d
 Nmap <Del> [Delete] "_d
 Nmap <Del><Del> [Delete line] "_dd
+
+" Paste w/o register backup
+vmap <Leader>p "_dP
 
 " Toggle read-only
 Nmap <Leader>ro [Toggle Read-Only] :set ro!<CR>
