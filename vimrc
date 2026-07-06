@@ -392,6 +392,18 @@ function! TrimTrailingWS ()
 	endif
 endfunction
 
+"===[ OSC 52 Clipboard ]========================================================
+
+" OSC 52 clipboard — works without X11
+function! Osc52Yank()
+  let buffer = system('base64 -w0', @0)
+  let buffer = substitute(buffer, "\n", "", "g")
+  let buffer = '\033]52;c;' . buffer . '\007'
+  silent exe "!echo -ne " . shellescape(buffer) . " > /dev/tty"
+endfunction
+
+autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
+
 "===[ Custom commands ]=========================================================
 
 command! -nargs=? -complete=help   Vhelp    vertical help <args>
